@@ -46,9 +46,15 @@ def squares():
 
         # move amount is distance from center of circle to the
         # point where the user clicked
-        dx = p.getX() - c.getX()
-        dy = p.getY() - c.getY()
-        shape.move(dx, dy)
+        #dx = p.getX() - c.getX()
+        #dy = p.getY() - c.getY()
+        #shape.move(dx, dy)
+        new_shape = Circle(Point(p.getX(), p.getY()), 20)
+        new_shape.setOutline("red")
+        new_shape.setFill("red")
+        new_shape.draw(win)
+        instructions = Text(inst_pt, "Click again to quit")
+        instructions.draw(win)
 
     win.getMouse()
     win.close()
