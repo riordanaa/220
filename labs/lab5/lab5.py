@@ -163,12 +163,11 @@ def main():
     # triangle()
     # color_shape()
     pass
-
+triangle()
 another_series()
 process_list()
 process_string()
 color_shape()
-triangle()
 
 # notes
 #p1 = win.getmouse()

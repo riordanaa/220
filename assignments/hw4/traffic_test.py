@@ -129,3 +129,5 @@ class TestClass:
         yield
         # Will be executed after the last test
         print(f'\nTotal: {total} / 90')
+
+
