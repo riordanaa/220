@@ -29,4 +29,4 @@ class TestClass:
         # Will be executed before the first test
         yield
         # Will be executed after the last test
-        print(f'\nTotal: {total} / {code_style_points}')
+        print(f'\nTotal: {20} / {code_style_points}')

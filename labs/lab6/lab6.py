@@ -62,7 +62,7 @@ def pig_lattin():
 
 
 
-
+names()
 # in for loop
 # first = input("enter" + str(i+1))
 # last = input()
