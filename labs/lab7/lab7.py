@@ -10,7 +10,7 @@ Partner: <your partner's name goes here – first and last>
 def cash_conversion():
     inte = eval(input("what is your integer?"))
     print('${:.2f}'.format(inte))
-
+cash_conversion()
 
 def encode():
     message = input("what is your message")

@@ -61,7 +61,7 @@ def pig_lattin():
 
 
 
-
+initials()
 names()
 # in for loop
 # first = input("enter" + str(i+1))

@@ -23,6 +23,7 @@ def main():
     circle_2.setOutline("red")
     # triangle
     triangle = Polygon(Point(45, 25), Point(30, 50), Point(60, 50))
+
     triangle.setOutline("red")
     triangle.setFill("red")
     triangle.draw(win)
@@ -37,6 +38,8 @@ def main():
     greeting.draw(win)
     time.sleep(3)
     greeting.setText("")
+    Oval(Point(10,10), Point(50,90)).draw(win)
+
     for _ in range(15):
         arrow.move(5, 5)
         time.sleep(.1)
