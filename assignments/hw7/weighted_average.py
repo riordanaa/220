@@ -13,7 +13,6 @@ def main():
 def weighted_average(in_file_name, out_file_name):
     infile = open(in_file_name, "r")
     outfile = open(out_file_name, "w+")
-
     class_size = 0
     avg_acc = 0
     weight_acc = 0
@@ -47,8 +46,6 @@ def weighted_average(in_file_name, out_file_name):
                     else:
                         gs.append(val)
                     i = i + 1
-               # print(gs)
-               # print(ws)
 
                 w_times_g_acc = 0
                 i = 0
