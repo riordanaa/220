@@ -7,7 +7,8 @@ I Aidan Riordan certify that this is my own work
 
 from random import randint
 import math
-from graphics import *
+
+from graphics import GraphWin, Circle, Point, color_rgb, time
 
 
 def get_random_color():
@@ -26,14 +27,14 @@ def get_random(move_amount):
 def hit_vertical(ball, win):
     # get r and center for both balls
     center = ball.getCenter()
-    r = ball.getRadius()
+    rad = ball.getRadius()
     # left and right bounds as vars from win
     right_chord = win.getWidth()
 
     distance_of_ball_horiz1 = math.sqrt((center.getX() - right_chord) ** 2)
     distance_of_ball_horiz2 = math.sqrt((center.getX()) ** 2)
 
-    if float(distance_of_ball_horiz1) <= r or float(distance_of_ball_horiz2) <= r:
+    if float(distance_of_ball_horiz1) <= rad or float(distance_of_ball_horiz2) <= rad:
         return True
 
     return False
@@ -41,13 +42,13 @@ def hit_vertical(ball, win):
 
 def hit_horizontal(ball, win):
     center = ball.getCenter()
-    r = ball.getRadius()
+    rad = ball.getRadius()
     lower_bound_chord = win.getHeight()
 
     distance_of_ball_horiz1 = math.sqrt((center.getY() - lower_bound_chord) ** 2)
     distance_of_ball_horiz2 = math.sqrt((center.getY()) ** 2)
 
-    if float(distance_of_ball_horiz1) <= r or float(distance_of_ball_horiz2) <= r:
+    if float(distance_of_ball_horiz1) <= rad or float(distance_of_ball_horiz2) <= rad:
         return True
 
     return False
@@ -56,17 +57,17 @@ def hit_horizontal(ball, win):
 def did_collide(ball, ball2):
     # get r and center for both balls
     center = ball.getCenter()
-    r = ball.getRadius()
+    rad = ball.getRadius()
     center2 = ball2.getCenter()
-    r2 = ball.getRadius()
+    rad_2 = ball.getRadius()
 
     dist_balls = math.sqrt((center.getX() - center2.getX())**2+(center.getY()-center2.getY())**2)
-    rad_len = r + r2
+    rad_len = rad + rad_2
 
     if float(dist_balls) <= rad_len:
         return True
-    else:
-        return False
+
+    return False
 
 
 def main():
