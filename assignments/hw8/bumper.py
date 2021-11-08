@@ -1,66 +1,57 @@
 
-"""
-Name: <Aidan Riordan>
-program name: <vigenere>
-I Aidan Riordan certify that this is my own work
-"""
-
-from random import randint
+from graphics import *
 import math
+from random import randint
 
-from graphics import GraphWin, Circle, Point, color_rgb, time
+
+
 
 
 def get_random_color():
-    red = randint(0, 255)
-    green = randint(0, 255)
-    blue = randint(0, 255)
-    color1 = color_rgb(red, green, blue)
-    return color1
+    r = randint(0, 255)
+    g = randint(0, 255)
+    b = randint(0, 255)
+    return color_rgb(r, g, b)
 
 
 def get_random(move_amount):
-    rand_move_amount = randint(-1*move_amount, move_amount)
-    return int(rand_move_amount)
+    return randint(-1*move_amount, move_amount)
 
 
 def hit_vertical(ball, win):
-    # get r and center for both balls
-    center = ball.getCenter()
-    rad = ball.getRadius()
-    # left and right bounds as vars from win
     right_chord = win.getWidth()
-
-    distance_of_ball_horiz1 = math.sqrt((center.getX() - right_chord) ** 2)
-    distance_of_ball_horiz2 = math.sqrt((center.getX()) ** 2)
-
-    if float(distance_of_ball_horiz1) <= rad or float(distance_of_ball_horiz2) <= rad:
+    c = ball.getCenter()
+    rad = ball.getRadius()
+    distance_of_ball_horiz1 = math.sqrt((c.getX() - right_chord) ** 2)
+    distance_of_ball_horiz2 = math.sqrt((c.getX()) ** 2)
+    if distance_of_ball_horiz1 <= rad:
         return True
-
-    return False
+    if distance_of_ball_horiz2 <= rad:
+        return True
+    else:
+        return False
 
 
 def hit_horizontal(ball, win):
+    lower_bound_chord = win.getHeight()
     center = ball.getCenter()
     rad = ball.getRadius()
-    lower_bound_chord = win.getHeight()
-
     distance_of_ball_horiz1 = math.sqrt((center.getY() - lower_bound_chord) ** 2)
     distance_of_ball_horiz2 = math.sqrt((center.getY()) ** 2)
-
-    if float(distance_of_ball_horiz1) <= rad or float(distance_of_ball_horiz2) <= rad:
+    if float(distance_of_ball_horiz1) <= rad:
         return True
-
-    return False
+    if float(distance_of_ball_horiz2) <= rad:
+        return True
+    else:
+        return False
 
 
 def did_collide(ball, ball2):
     # get r and center for both balls
-    center = ball.getCenter()
     rad = ball.getRadius()
-    center2 = ball2.getCenter()
+    center = ball.getCenter()
     rad_2 = ball.getRadius()
-
+    center2 = ball2.getCenter()
     dist_balls = math.sqrt((center.getX() - center2.getX())**2+(center.getY()-center2.getY())**2)
     rad_len = rad + rad_2
 
