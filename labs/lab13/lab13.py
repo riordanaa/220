@@ -1,6 +1,6 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: <Aidan Riordan>
+<lab13>.py
 """
 def binary_search(value,lst):
     left = 0
