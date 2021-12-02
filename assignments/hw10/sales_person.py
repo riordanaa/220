@@ -50,4 +50,4 @@ class SalesPerson:
 
 # note when do we need to change the data types in order to pass the tests?
 # when they are entered? when they are got by getters?
-# made in a class function
+# made in a class function.
