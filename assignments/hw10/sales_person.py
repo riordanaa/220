@@ -1,5 +1,5 @@
 class SalesPerson:
-    """This class contains employee data on a respective sales person"""
+    """This class contains employee data on a respective sales persond"""
 
     def __init__(self, employee_id, name):
         """Initializes the sales person with respective employee_id and name"""

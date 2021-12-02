@@ -1,7 +1,7 @@
 """
 Name: <Aidan Riordan>
 program name: <button.py>
-I Aidan Riordan certify that this is my own work
+I Aidan Riordan certify that this is my own work d
 """
 from sales_person import SalesPerson
 class SalesForce:
