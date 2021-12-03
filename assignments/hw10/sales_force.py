@@ -34,41 +34,19 @@ class SalesForce:
         return list_a
 
     def top_seller(self):
-        # people_highest_total_sales = []
-        return 5
-    """    hiest_obj = self.sales_people[0]
-        same = 0
-        for i in range[1: len(self.sales_people)]:
-            if self.sales_people[i].total_sales() > hiest_obj.total_sales():
-                hiest_obj = self.sales_people[i]
-                same = 0
+        top_seller = []
+        highest_total_sales = self.sales_people[0].total_sales()
+        for person in self.sales_people:
+            if person.total_sales() > highest_total_sales:
+                highest_total_sales = person.total_sales()
 
-            elif self.sales_people[i].total_sales() == hiest_obj.total_sales():
-                same = same + 1
-        if same == 0:
-            people_highest_total_sales.append(hiest_obj)
-        else:
-            for person in self.sales_people:
-                if person.total_sales() == hiest_obj.total_sales():
-                    people_highest_total_sales.append(person)
-"""
-
+        for person in self.sales_people:
+            if person.total_sales() == highest_total_sales:
+                top_seller.append(person)
+        return top_seller
 
     def individual_sales(self, employee_id):
         for person in self.sales_people:
             if person.get_id() == employee_id:
                 return person
         return None
-        # do i need to convert to int or string here? line 26.
-
-    """
-           if not person.total_sales():
-                total_sales.append(0)
-            else:
-                total_sales.append(person.total_sales())
-        highest_total = 0
-        i = 0
-        for _ in total_sales:
-            if total_sales[i] >= highest_total:
-                people_highest_total_sales.append(self.sales_people[i])
-            i = i + 1"""
